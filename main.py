@@ -1,12 +1,10 @@
+import cpuinfo
+import psutil
+import platform
 import subprocess
 # Install dependencies if not already installed
 subprocess.call(['pip', 'install', 'psutil'])
 subprocess.call(['pip', 'install', 'py-cpuinfo'])
-
-
-import platform
-import psutil
-import cpuinfo
 
 
 def get_system_info():
@@ -20,6 +18,7 @@ def get_system_info():
     }
     return system_info
 
+
 def get_cpu_info():
     cpu_info = {
         "Physical Cores": psutil.cpu_count(logical=False),
@@ -27,6 +26,7 @@ def get_cpu_info():
         "CPU Frequency": f"{psutil.cpu_freq().current:.2f} MHz"
     }
     return cpu_info
+
 
 def get_memory_info():
     memory_info = {
@@ -36,6 +36,7 @@ def get_memory_info():
         "Memory Usage": f"{psutil.virtual_memory().percent}%"
     }
     return memory_info
+
 
 def get_disk_info():
     disk_info = {}
@@ -55,6 +56,7 @@ def get_disk_info():
         except PermissionError:
             continue
     return disk_info
+
 
 if __name__ == "__main__":
     system_info = get_system_info()
