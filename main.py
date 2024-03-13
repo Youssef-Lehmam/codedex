@@ -1,7 +1,8 @@
-import cpuinfo
-import psutil
 import platform
 import subprocess
+
+import cpuinfo
+import psutil
 
 # Install dependencies if not already installed
 subprocess.call(["pip", "install", "psutil"])
