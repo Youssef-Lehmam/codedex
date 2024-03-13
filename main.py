@@ -35,8 +35,10 @@ def get_cpu_info():
 def get_memory_info():
     """ """
     memory_info = {
-        "Total Memory": f"{psutil.virtual_memory().total / (1024 ** 3):.2f} GB",
-        "Available Memory": f"{psutil.virtual_memory().available / (1024 ** 3):.2f} GB",
+        "Total Memory":
+        f"{psutil.virtual_memory().total / (1024 ** 3):.2f} GB",
+        "Available Memory":
+        f"{psutil.virtual_memory().available / (1024 ** 3):.2f} GB",
         "Used Memory": f"{psutil.virtual_memory().used / (1024 ** 3):.2f} GB",
         "Memory Usage": f"{psutil.virtual_memory().percent}%",
     }
