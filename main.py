@@ -10,6 +10,7 @@ subprocess.call(["pip", "install", "py-cpuinfo"])
 
 
 def get_system_info():
+    """ """
     system_info = {
         "System": platform.system(),
         "Node Name": platform.node(),
@@ -22,6 +23,7 @@ def get_system_info():
 
 
 def get_cpu_info():
+    """ """
     cpu_info = {
         "Physical Cores": psutil.cpu_count(logical=False),
         "Total Cores": psutil.cpu_count(logical=True),
@@ -31,6 +33,7 @@ def get_cpu_info():
 
 
 def get_memory_info():
+    """ """
     memory_info = {
         "Total Memory": f"{psutil.virtual_memory().total / (1024 ** 3):.2f} GB",
         "Available Memory": f"{psutil.virtual_memory().available / (1024 ** 3):.2f} GB",
@@ -41,6 +44,7 @@ def get_memory_info():
 
 
 def get_disk_info():
+    """ """
     disk_info = {}
     partitions = psutil.disk_partitions()
     for i, partition in enumerate(partitions):
